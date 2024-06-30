@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "./redux/hooks";
 import { ITodo, addTodo } from "./redux/features/todo/todoSlice";
 
 function App() {
-    const { todo } = useAppSelector((state) => state.todo);
+    const { todo } = useAppSelector((state: RootState) => state.todo);
     const dispatch = useAppDispatch();
 
     const handleOnClick = () => {};
