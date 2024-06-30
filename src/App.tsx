@@ -1,36 +1,10 @@
-import { RootState } from "@reduxjs/toolkit/query";
+import Todo from "./components/todo/Todo";
 import "./App.css";
-import { Button } from "./components/ui/button";
-import { useAppDispatch, useAppSelector } from "./redux/hooks";
-import { ITodo, addTodo } from "./redux/features/todo/todoSlice";
 
-function App() {
-    const { todo } = useAppSelector((state: RootState) => state.todo);
-    const dispatch = useAppDispatch();
-
-    const handleOnClick = () => {};
+export default function App() {
     return (
         <>
-            <Button
-                onClick={() =>
-                    dispatch(
-                        addTodo({
-                            id: "jfsdklf",
-                            title: "fjsodfhiuwerwehfuiwn",
-                            priority: "High",
-                            isCompleted: false,
-                        })
-                    )
-                }>
-                Click Shadcn
-            </Button>
-            <div>
-                {todo?.map((todoSingle: ITodo) => (
-                    <div>{todoSingle.title}</div>
-                ))}
-            </div>
+            <Todo />
         </>
     );
 }
-
-export default App;
